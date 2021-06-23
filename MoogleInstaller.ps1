@@ -2,19 +2,19 @@ $s = $PSScriptRoot
 $MoogleStuff = $s.Substring(0, $s.IndexOf('MINIONAPP'))+'\MINIONAPP\Bots\FFXIVMinion64\LuaMods\MoogleStuff Files'
 If(!(test-path $MoogleStuff))
 {
-md -Force $MoogleStuff
+mkdir -Force $MoogleStuff 
 }
 If(!(test-path $MoogleStuff'\Moogle Updater.lua'))
 {
-(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/MoogleUpdater.lua',$MoogleStuff+'\Moogle Updater.lua')
+(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/Moogle%20Updater.lua',$MoogleStuff+'\Moogle Updater.lua')
 }
 If(!(test-path $MoogleStuff'\module.def'))
 {
-(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/MoogleStuffModule.def',$MoogleStuff+'\module.def')
+(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/module.def',$MoogleStuff+'\module.def')
 }
 If(!(test-path $MoogleStuff'\Main Window.lua'))
 {
-(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/MainWindow.lua',$MoogleStuff+'\Main Window.lua')
+(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/KaliMinion/Moogle-Stuff/master/Main%20Window.lua',$MoogleStuff+'\Main Window.lua')
 }
 If(!(test-path $MoogleStuff'\Moogle Scripts.lua'))
 {
@@ -30,4 +30,5 @@ if ($Host.Name -eq "ConsoleHost")
 {
     Write-Host "Files installed, press any key to close this window then Reload Lua..."
     $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyUp") > $null
+
 }
